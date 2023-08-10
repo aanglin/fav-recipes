@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 const RecipeInput = () => {
   const [recipe, setRecipe] = useState({
     title: '',
+    category: '',
     ingredients: '',
     instructions: '',
   });
@@ -30,6 +31,7 @@ const RecipeInput = () => {
     console.log(recipe);
   setRecipe({
     title: '',
+    category: '',
     ingredients: '',
     instructions: '',
     });
@@ -57,6 +59,17 @@ const RecipeInput = () => {
             id="title"
             name="title"
             value={recipe.title}
+            onChange={handleChange}
+            className="w-full border p-2 text-[#000]"
+          />
+        </div>
+        <div>
+          <label htmlFor="title">Category</label>
+          <input
+            type="text"
+            id="category"
+            name="category"
+            value={recipe.category}
             onChange={handleChange}
             className="w-full border p-2 text-[#000]"
           />
