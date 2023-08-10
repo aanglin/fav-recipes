@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+.recipe-ingredients {
+  line-height: 1.5; /* Adjust this value as needed */
+  padding: 8px; /* Adjust this value as needed */
+  resize: vertical; /* Allow vertical resizing of the textarea */
+}
+
+input {
+  @apply rounded-xl
+}
+textarea {
+  @apply rounded-xl
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
