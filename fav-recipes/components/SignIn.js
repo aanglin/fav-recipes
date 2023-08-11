@@ -6,11 +6,11 @@ import { FaApple } from "react-icons/fa6";
 export default function SignIn() {
   //   const { googleLoginHandler } = useContext(authContext);
   return (
-    <main className="container flex flex-col justify-center items-center max-w-2xl px-6 mx-auto ">
-      <h1 className="mb-6 text-5xl font-bold text-center ">
+    <main className="container flex flex-col justify-center items-center max-w-2xl px-6 mx-auto pb-12 overflow-hidden">
+      <h1 className="mb-12 text-5xl font-bold text-center p-3  ">
         Fav - Recipes{" "}
       </h1>
-      <div className="flex flex-col  overflow-hidden w-fit shadow-md shadow-gray-500 bg-gray-800 rounded-2x rounded-xl">
+      <div className="flex flex-col mb-80 m-3  overflow-hidden w-fit shadow-md shadow-gray-500 bg-gray-800 rounded-2x rounded-xl">
         {/* <div className="h-52">
           <img
             className="object-cover w-full h-full "

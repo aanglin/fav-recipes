@@ -30,6 +30,7 @@ const RecipeInput = () => {
     // Handle form submission logic here
     console.log(recipe);
   setRecipe({
+    image: '',
     title: '',
     category: '',
     ingredients: '',
@@ -38,7 +39,7 @@ const RecipeInput = () => {
   };
 
   return (
-    <div className="container max-w-2xl px-6 mx-auto my-48">
+    <div className="container max-w-2xl px-6 mx-auto my-48 ">
       <h1 className="text-2xl text-center font-bold mb-12 mt-12">Add New Recipe</h1>
       <form onSubmit={handleSubmit} className="space-y-4 text-xl p-5 m-5 text-silver ">
       <div>
