@@ -82,7 +82,7 @@ const RecipeInput = () => {
             name="ingredients"
             value={recipe.ingredients}
             onChange={handleChange}
-            className="w-full border p-2 recipe-ingrediants text-[#000]"
+            className="w-full border p-2  text-[#000]"
           />
         </div>
         <div>
