@@ -5,7 +5,7 @@ import { authContext } from "@/lib/store/auth-context";
 export default function NavBar() {
   const { logout, loading, user } = useContext(authContext);
   return (
-    <header className="container  px-6 py-6 mx-auto">
+    <header className="container  px-6 py-6 mx-auto text-[#fff] font-bold">
       <div className="flex items-center justify-between">
         {/* User Information */}
         {user && !loading && (
@@ -23,6 +23,8 @@ export default function NavBar() {
             <small>Hi, {user.displayName}!</small>
           </div>
         )}
+        <h1 className=" flex  text-3xl font-bold text-center mr-20   ">Fav Recipes</h1>
+
 
         {/* logout button */}
         {user && !loading && (

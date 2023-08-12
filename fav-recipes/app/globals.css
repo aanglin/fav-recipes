@@ -18,7 +18,7 @@ textarea {
 body {
   position: relative;
  background-image: url(https://images.unsplash.com/photo-1542010589005-d1eacc3918f2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmVjaXBlc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60);
-  @apply   h-screen bg-cover bg-center flex items-center justify-center overflow-hidden
+ @apply   h-screen bg-cover bg-center  items-center justify-center overflow-hidden
 }
 body::before {
   content: "";
