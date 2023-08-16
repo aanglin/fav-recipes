@@ -37,8 +37,8 @@ function RecipeCards() {
   ];
 
   return (
-    <div className="container flex flex-col justify-center items-center max-w-2xl px-6 mx-auto my-48 text-[#fff]  ">
-      <h1 className="text-2xl text-center font-extrabold text-white mb-12 mt-12">
+    <div className="container flex flex-col justify-center items-center max-w-2xl px-6 mx-auto  text-[#fff]  ">
+      <h1 className="text-2xl text-center font-extrabold mb-5 mt-12">
         Favorite Recipes
       </h1>
       <div className="flex  overflow-x-auto w-full h-full">
@@ -48,6 +48,7 @@ function RecipeCards() {
           ))}
         </div>
       </div>
+      
     </div>
   );
 }

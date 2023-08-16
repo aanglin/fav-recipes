@@ -1,5 +1,6 @@
 'use client';
 import React, { useState } from 'react';
+import Link from 'next/link';
 
 const RecipeInput = () => {
   const [recipe, setRecipe] = useState({
@@ -25,6 +26,9 @@ const RecipeInput = () => {
     }));
   };
 
+
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle form submission logic here
@@ -40,7 +44,7 @@ const RecipeInput = () => {
 
   return (
     <div className="container flex flex-col justify-center items-center max-w-2xl px-6 mx-auto my-1 text-[#fff] ">
-    <h1 className="text-2xl text-center font-bold mb-1 mt-20">Add New Recipe</h1>
+    <h1 className="text-2xl text-center font-bold mb-1 mt-2">Add New Recipe</h1>
     <form onSubmit={handleSubmit} className="space-y-4 text-xl p-5 m-2 text-silver ">
     <div>
   <label htmlFor="image">Image</label>
@@ -95,9 +99,16 @@ const RecipeInput = () => {
           className="w-full border p-2 text-[#000]"
         />
       </div>
-      <button type="submit" className="bg-blue-500 text-white p-2 rounded">
+      <div className='flex'>
+      <button type="submit" className="btn btn-primary">
         Add Recipe
       </button>
+      <Link href="/recipes">
+      <button  className="btn btn-primary">
+        View Recipes
+      </button>
+      </Link>
+      </div>
     </form>
   </div>
   //   <div className="container flex flex-col justify-center items-center max-w-2xl px-6 mx-auto my-48 ">

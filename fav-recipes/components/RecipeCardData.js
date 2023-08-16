@@ -1,8 +1,10 @@
+import Link from 'next/link'
 import React from 'react'
 
 function RecipeCardData({ recipe }) {
   return (
-    <div className="flex flex-col mb-56 m-3  overflow-hidden w-80  bg-zinc-500 rounded-2x rounded-xl">
+    <div>
+ <div className="flex flex-col m-3  overflow-hidden w-80  bg-zinc-500 rounded-2x rounded-xl">
     <div className="h-96 overflow-y-auto">
       <img
         className="object-cover w-full h-1/2 overflow-hidden  "
@@ -28,6 +30,11 @@ function RecipeCardData({ recipe }) {
         </ol>
     </div>
   </div>
+  <Link href="/" className='flex justify-center items-center'>
+  <button className="btn btn-primary ">Create Recipes</button>
+  </Link>
+    </div>
+   
   )
 }
 
