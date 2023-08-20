@@ -5,7 +5,7 @@ import { authContext } from "@/lib/store/auth-context";
 export default function NavBar() {
   const { logout, loading, user } = useContext(authContext);
   return (
-    <header className="container  px-1 py-6 mx-auto text-[#fff] font-bold">
+    <header className="container  px-1 py-2 mx-auto text-[#fff] font-bold overflow-hidden">
       <div className="flex items-center justify-between">
         {/* User Information */}
         {user && !loading && (

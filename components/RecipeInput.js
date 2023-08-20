@@ -67,12 +67,12 @@ const RecipeInput = () => {
 
   return (
     <div className="container flex flex-col justify-center items-center max-w-2xl px-6 mx-auto my-1 text-[#fff] ">
-      <h1 className="text-2xl text-center font-bold mb-1 mt-2">
+      <h1 className="text-2xl text-center font-bold mb-1 ">
         Add New Recipe
       </h1>
       <form
         onSubmit={handleSubmit}
-        className="space-y-4 text-xl p-5 m-2 text-silver "
+        className="space-y-4 text-xl p-5 m-1 text-silver "
       >
         <div>
           <label htmlFor="image">Image</label>
