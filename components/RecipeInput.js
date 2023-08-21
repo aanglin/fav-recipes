@@ -4,16 +4,17 @@ import Link from "next/link";
 import { db, storage } from "../lib/firebase";
 import { collection, addDoc, doc, updateDoc } from "firebase/firestore";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
-
+import { authContext } from "@/lib/store/auth-context";
 
 const RecipeInput = () => {
   const [recipe, setRecipe] = useState({
+    uid: "",
     title: "",
     category: "",
     ingredients: "",
     instructions: "",
   });
-
+  const { user } = useContext(authContext);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -67,9 +68,7 @@ const RecipeInput = () => {
 
   return (
     <div className="container flex flex-col justify-center items-center max-w-2xl px-6 mx-auto my-1 text-[#fff] ">
-      <h1 className="text-2xl text-center font-bold mb-1 ">
-        Add New Recipe
-      </h1>
+      <h1 className="text-2xl text-center font-bold mb-1 ">Add New Recipe</h1>
       <form
         onSubmit={handleSubmit}
         className="space-y-4 text-xl p-5 m-1 text-silver "
