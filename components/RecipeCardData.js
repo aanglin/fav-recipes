@@ -8,11 +8,12 @@ function RecipeCardData({ recipe }) {
       <div className="flex flex-col m-3  overflow-hidden w-80  bg-zinc-500 rounded-2x rounded-xl">
         <div className="h-[30rem] overflow-y-auto">
           <Image
-            className=" object-contain  overflow-hidden  "
+            className=" object-cover  overflow-hidden h-72   "
             src={recipe.image}
             alt="login"
             width={400}
             height={400}
+            priority
           />
           <div className="">
             <h2 className="text-2xl text-center p-3 ">{recipe.title}</h2>
