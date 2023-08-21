@@ -37,7 +37,7 @@ const RecipeInput = () => {
     // Handle form submission logic here
     const recipeRef = collection(db, "recipes");
     const payload = {
-      // uid: user.uid,
+      uid: user.uid,
       title: recipe.title,
       category: recipe.category,
       ingredients: recipe.ingredients,
