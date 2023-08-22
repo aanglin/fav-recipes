@@ -2,9 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import RecipeCardData from "./RecipeCardData";
 import {
   collection,
-  deleteDoc,
-  getDocs,
-  updateDoc,
+  onSnapshot,
   query,
   where,
 } from "firebase/firestore";
@@ -19,16 +17,21 @@ function RecipeCards() {
     if (!user) return;
     const recipeRef = collection(db, "recipes");
     const q = query(recipeRef, where("uid", "==", user.uid));
-    const querySnapshot = await getDocs(q);
-    const recipes = [];
-    querySnapshot.forEach((doc) => {
-      recipes.push({ ...doc.data(), id: doc.id });
+    const unsubscribe = onSnapshot(q, (querySnapshot) => {
+      const recipes = [];
+      querySnapshot.forEach((doc) => {
+        recipes.push({ ...doc.data(), id: doc.id });
+      });
+      setRecipe(recipes);
     });
-    setRecipe(recipes);
+    return unsubscribe;
   };
 
   useEffect(() => {
-    getRecipes();
+    const unsubscribe = getRecipes();
+    return () => {
+      unsubscribe();
+    };
   }, []);
 
   return (
@@ -36,7 +39,7 @@ function RecipeCards() {
       <h1 className="text-2xl text-center font-extrabold mb-5 mt-2">
         Favorite Recipes
       </h1>
-      <div className="flex  overflow-x-auto w-full h-full">
+      <div className="flex md:justify-center overflow-x-auto w-full h-full">
         <div className="flex flex-nowrap">
           {recipe.map((recipe, index) => (
             <RecipeCardData key={index} recipe={recipe} />

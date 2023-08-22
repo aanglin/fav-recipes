@@ -20,6 +20,9 @@
   .btn-primary {
     @apply border-[#0000CF] border text-[#fff] font-bold;
   }
+  .btn-secondary {
+    @apply border-[#FF0000] border text-[#fff] font-bold;
+  }
 
 }
 

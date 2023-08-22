@@ -1,8 +1,23 @@
 import Image from "next/image";
 import React from "react";
+import {
+  deleteDoc,
+  doc,
+} from "firebase/firestore";
+import { db, storage } from "../lib/firebase";
+import { deleteObject, ref } from "firebase/storage";
+
 
 function RecipeCardData({ recipe }) {
-  console.log(recipe);
+
+  const deleteRecipe = async () => {
+    const recipeRef = doc(db, "recipes",  recipe.id);
+    await deleteDoc(recipeRef);
+
+    // delete image from storage
+    const storageRef = ref(storage, `recipes/${recipe.id}`);
+    await deleteObject(storageRef);
+  };
   return (
     <div>
       <div className="flex flex-col m-3  overflow-hidden w-80  bg-zinc-500 rounded-2x rounded-xl">
@@ -37,6 +52,11 @@ function RecipeCardData({ recipe }) {
               </li>
             ))}
           </ol>
+        </div>
+        <div className="flex justify-center items-center gap-3">
+        <button className="btn btn-primary">Update</button>
+        <button className="btn btn-secondary" onClick={deleteRecipe}>Delete</button>
+
         </div>
       </div>
     </div>
