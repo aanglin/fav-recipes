@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useRef } from "react";
 import Link from "next/link";
 import { db, storage } from "../lib/firebase";
 import { collection, addDoc, doc, updateDoc } from "firebase/firestore";
@@ -15,6 +15,7 @@ const RecipeInput = () => {
     instructions: "",
   });
   const { user } = useContext(authContext);
+  const imageInputRef = useRef(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -58,12 +59,14 @@ const RecipeInput = () => {
 
     console.log(recipe);
     setRecipe({
-      image: "",
       title: "",
       category: "",
       ingredients: "",
       instructions: "",
     });
+    if (imageInputRef.current) {
+      imageInputRef.current.value = "";
+    }
   };
 
   return (
@@ -82,6 +85,7 @@ const RecipeInput = () => {
             accept="image/*"
             onChange={handleImageChange}
             className="w-full border  p-2"
+            ref={imageInputRef}
           />
         </div>
         <div>
