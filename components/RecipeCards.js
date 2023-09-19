@@ -28,10 +28,7 @@ function RecipeCards() {
   };
 
   useEffect(() => {
-    const unsubscribe = getRecipes();
-    return () => {
-      unsubscribe();
-    };
+   getRecipes();
   }, []);
 
   return (
